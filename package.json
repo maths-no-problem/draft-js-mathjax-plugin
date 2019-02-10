@@ -38,9 +38,10 @@
   },
   "scripts": {
     "clean": "rm -rf ./lib",
-    "build": "yarn run clean && yarn run build:js",
+    "build": "yarn clean && yarn build:js",
     "build:js": "BABEL_DISABLE_CACHE=1 BABEL_ENV=production NODE_ENV=production babel --out-dir='lib' --ignore='__test__/*' src",
-    "lint": "eslint 'src/*.js' 'src/**/*.js'; exit 0"
+    "lint": "eslint 'src/*.js' 'src/**/*.js'; exit 0",
+    "prepublishOnly": "yarn build"
   },
   "license": "MIT",
   "dependencies": {},
